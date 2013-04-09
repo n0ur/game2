@@ -48,9 +48,6 @@ $(document).ready(function () {
             this.cards[i] = new Card(suit, rank); i++;
           }
         }
-        this.cardOnTopId = this.cards.length-1;
-
-        
       },
       shuffle: function() {
         var i = this.cards.length;
@@ -79,11 +76,10 @@ $(document).ready(function () {
         $cardOnTop.animate({
           left: '+=120',
           top: '125px',
-        }, 200, function() { 
-          $(this).attr('src', self.cards[self.cardOnTopId].url(true)); 
-        });
+        }, 200);
+        $cardOnTop.attr('src', self.cards[self.cardOnTopId].url(true)); 
         $cardOnTop.css('z-index', $cardOnTop.css('z-index')*-1);
-        this.cardOnTopId -= 1; // this.cardOnTopId > -1 ? this.cardOnTopId - 1 : 0;
+        this.cardOnTopId -= 1;
       },
       renderFirstTime: function() {
         var html = '', top = 125, left = 190, zindex = -52, self=this;
@@ -91,13 +87,13 @@ $(document).ready(function () {
           html+='<img src="'+this.cards[i].url(false)
           +'" style="top:'+top+'px; left:'+left+'px; z-index:'+zindex
           +';" data-card-id="'+i+'" />';
-          if (i%6 === 0) { top -= 1; left -= 1; }
+          if (i%7 === 0) { top -= 1; left -= 1; }
           zindex += 1;
         }
         $("#card-table").html(html);
         $('img[data-card-id]').click(function(){
           self.moveCardOnTop();
-          // $(this).unbind('click');
+          $(this).unbind('click');
         });
       }
     };
