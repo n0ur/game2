@@ -1,0 +1,39 @@
+      #card-table {
+        background-color:#fdfdfd;
+        height:400px;
+        width:600px;
+        border:solid 6px #999;
+        position:relative;
+        z-index:1;
+      }
+
+body {
+  background:#eeeeee;
+}
+/*table.table tr td {
+  height:50px;
+  width:50px;
+}
+.table th, .table td {
+  vertical-align: middle;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+.center {
+  text-align: center;
+}
+.btn-success {
+  margin-top:10px;
+}
+pre.pre-scrollable {
+  min-height:180px;
+  max-height:180px;
+  height:180px;
+}*/
+img {
+  width:100px;
+  height:130px;
+  position: absolute;
+  cursor: pointer;
+}
